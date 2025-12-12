@@ -5,7 +5,7 @@
 #define mod(a, m) (((a % m) + m) % m) // Mathematical modulus operation using remainders
 
 int main(void) {
-    FILE *f = fopen("input.txt", "r");
+    FILE *f = fopen("input", "r");
     if (f == NULL) {
         printf("Failed to open file.");
         return 1;
@@ -23,6 +23,7 @@ int main(void) {
         if (current_position == 0) counter++;
         current_line++;
     }
+    fclose(f);
     printf("%d lines processed. Password is %d", current_line - 1, counter);
     return 0;
 }
