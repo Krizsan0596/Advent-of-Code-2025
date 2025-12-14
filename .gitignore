@@ -1,3 +1,4 @@
 **/.nvim_build_cache
 **/main
+**/part[0-9]
 **/input
