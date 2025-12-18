@@ -5,22 +5,10 @@
 uint64_t process_line(char *line) {
     int i = 0;
     char digits[13] = {0};
-    while (100 - i > 12) {
-        for (int j = 0; j < 12; j++) {
-            if (line[i] > digits[j]) {
-                digits[j] = line[i];
-                j++;
-                while (j < 12) {
-                    digits[j] = '0';
-                    j++;
-                }
-                break;
-            }
-        }
-        i++;
-    }
-    while (i < 100) {
-        for (int j = 12 - (100 - i); j < 12; j++) {
+    while (100 > i) {
+        int start = 12 - (100 - i);
+        if (start < 0) start = 0;
+        for (int j = start; j < 12; j++) {
             if (line[i] > digits[j]) {
                 digits[j] = line[i];
                 j++;
